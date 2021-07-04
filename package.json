@@ -20,7 +20,8 @@
     "start:all": "concurrently \" yarn start\" \" yarn start:demo\"",
     "deploy:demo": "yarn --cwd ./demo build && gh-pages -d demo/build",
     "lint": "eslint src/**/*.{tsx,ts}",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "postinstall": "yarn build"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
