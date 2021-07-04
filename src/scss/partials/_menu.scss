@@ -160,11 +160,6 @@
 
           .pro-inner-item {
             padding: 8px 30px 8px 15px;
-            @extend %pro-item-prefix;
-
-            > .pro-icon-wrapper {
-              display: none;
-            }
 
             .pro-arrow-wrapper {
               display: none;
