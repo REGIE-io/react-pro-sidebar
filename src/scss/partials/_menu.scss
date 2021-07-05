@@ -21,10 +21,11 @@
 }
 
 .pro-sidebar {
+  color : $default-text-color;
+  box-shadow: 0px 0px 8px rgba(136, 136, 136, 0.25);
   .pro-menu {
     padding-top: 10px;
     padding-bottom: 10px;
-
     > ul {
       > .pro-sub-menu {
         > .pro-inner-list-item {
@@ -50,14 +51,21 @@
         left: 0;
         background-color: transparent;
       }
-      &:hover {
-        color: $highlight-color;
-      }
     }
     .pro-menu-item {
       font-size: 15px;
+      margin: 4px 10px;
+      padding: 0px;
+      border-radius: 4px;
       &.active {
-        color: $highlight-color;
+        background-color: $active-item-bg-color;
+        background-clip: content-box;
+        padding-right: 0px !important;
+        color: $active-text-color;
+      }
+
+      &:hover {
+        background: $greyNew6;
       }
 
       .suffix-wrapper {
@@ -75,12 +83,12 @@
         position: relative;
         display: flex;
         align-items: center;
-        padding: 8px 35px 8px 20px;
+        padding-left : 6px;
         cursor: pointer;
+        height: 48px;
 
         &:focus {
           outline: none;
-          color: $highlight-color;
         }
         > .pro-icon-wrapper {
           margin-right: 10px;
@@ -108,7 +116,6 @@
         }
 
         &:hover {
-          color: $highlight-color;
           .pro-icon-wrapper {
             .pro-icon {
               animation: swing ease-in-out 0.5s 1 alternate;
@@ -118,10 +125,19 @@
       }
 
       &.pro-sub-menu {
+        ul {
+          padding : 6px 0px !important;
+          li {
+            margin-left: 0px;
+            margin-right: 0px;
+          }
+        }
         > .pro-inner-item {
+          height: 48px;
           &:before {
             background: $sidebar-color;
           }
+
 
           > .pro-arrow-wrapper {
             position: absolute;
@@ -156,11 +172,7 @@
         }
 
         .pro-inner-list-item {
-          padding-left: 20px;
-
           .pro-inner-item {
-            padding: 8px 30px 8px 15px;
-
             .pro-arrow-wrapper {
               display: none;
             }
@@ -277,12 +289,11 @@
               }
             }
 
-            .pro-inner-list-item {
-              .pro-sub-menu-item,
-              .pro-inner-item {
-                padding: 8px 30px 8px 5px;
-              }
-            }
+            // .pro-inner-list-item {
+            //   .pro-sub-menu-item,
+            //   .pro-inner-item {
+            //   }
+            // }
           }
         }
       }
@@ -327,8 +338,7 @@
 
           .pro-inner-list-item {
             padding-left: 0;
-            padding-right: 20px;
-
+            
             .pro-inner-item {
               padding: 8px 15px 8px 30px;
               &:before {

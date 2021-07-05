@@ -16,7 +16,6 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
   const intl = useIntl();
   return (
     <ProSidebar
-      image={image ? sidebarBg : false}
       rtl={rtl}
       collapsed={collapsed}
       toggled={toggled}
@@ -41,8 +40,9 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
       </SidebarHeader>
 
       <SidebarContent>
-        <Menu iconShape="circle">
+        <Menu>
           <MenuItem
+          active
             icon={<FaTachometerAlt />}
             suffix={<span className="badge red">{intl.formatMessage({ id: 'new' })}</span>}
           >
@@ -50,13 +50,13 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
           </MenuItem>
           <MenuItem icon={<FaGem />}> {intl.formatMessage({ id: 'components' })}</MenuItem>
         </Menu>
-        <Menu iconShape="circle">
+        <Menu>
           <SubMenu
             suffix={<span className="badge yellow">3</span>}
             title={intl.formatMessage({ id: 'withSuffix' })}
             icon={<FaRegLaughWink />}
           >
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
+            <MenuItem active>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
             <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
             <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
           </SubMenu>
