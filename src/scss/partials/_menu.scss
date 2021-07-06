@@ -64,10 +64,6 @@
         color: $active-text-color;
       }
 
-      &:hover {
-        background: $greyNew6;
-      }
-
       .suffix-wrapper {
         opacity: 1;
         transition: opacity 0.2s;
@@ -89,6 +85,10 @@
 
         &:focus {
           outline: none;
+        }
+        &:hover {
+          background: $greyNew6;
+          border-radius: 4px;
         }
         > .pro-icon-wrapper {
           margin-right: 10px;
@@ -137,7 +137,7 @@
           &:before {
             background: $sidebar-color;
           }
-
+          
 
           > .pro-arrow-wrapper {
             position: absolute;
@@ -172,6 +172,9 @@
         }
 
         .pro-inner-list-item {
+          .pro-icon {
+            visibility: hidden;
+          }
           .pro-inner-item {
             .pro-arrow-wrapper {
               display: none;
