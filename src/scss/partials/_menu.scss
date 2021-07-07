@@ -66,6 +66,7 @@
           background-color: $active-item-bg-color;
           padding-right: 0px !important;
           color: $active-text-color;
+          border-radius: 4px;
         }
       }
 
@@ -134,6 +135,7 @@
           background-color: $submenu-bg-color;
           padding-right: 0px !important;
           color: $active-text-color;
+          border-radius: 4px;
           &:hover {
             @extend %item-hover
           }
