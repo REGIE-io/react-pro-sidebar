@@ -49,12 +49,11 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
             {intl.formatMessage({ id: 'dashboard' })}
           </MenuItem>
           <MenuItem icon={<FaGem />}> {intl.formatMessage({ id: 'components' })}</MenuItem>
-        </Menu>
-        <Menu>
           <SubMenu
             suffix={<span className="badge yellow">3</span>}
             title={intl.formatMessage({ id: 'withSuffix' })}
             icon={<FaRegLaughWink />}
+            className = {"active"}
           >
             <MenuItem active>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
             <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>

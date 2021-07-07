@@ -14,6 +14,11 @@
   }
 }
 
+%item-hover {
+  background: $greyNew6 !important;
+  border-radius: 4px;
+}
+
 %text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -58,10 +63,11 @@
       padding: 0px;
       border-radius: 4px;
       &.active {
-        background-color: $active-item-bg-color;
-        background-clip: content-box;
-        padding-right: 0px !important;
-        color: $active-text-color;
+        >.pro-inner-item{
+          background-color: $active-item-bg-color;
+          padding-right: 0px !important;
+          color: $active-text-color;
+        }
       }
 
       .suffix-wrapper {
@@ -87,8 +93,7 @@
           outline: none;
         }
         &:hover {
-          background: $greyNew6;
-          border-radius: 4px;
+          @extend %item-hover
         }
         > .pro-icon-wrapper {
           margin-right: 10px;
@@ -125,20 +130,29 @@
       }
 
       &.pro-sub-menu {
+        &.active {
+          >.pro-inner-item{
+          background-color: $submenu-bg-color;
+          padding-right: 0px !important;
+          color: $active-text-color;
+          &:hover {
+            @extend %item-hover
+          }
+        }
+        }
         ul {
-          padding : 6px 0px !important;
+          padding: 0px 0px !important;
           li {
-            margin-left: 0px;
-            margin-right: 0px;
+            margin: 4px 0px;
           }
         }
         > .pro-inner-item {
           height: 48px;
+          border-radius: 4px;
           &:before {
             background: $sidebar-color;
           }
           
-
           > .pro-arrow-wrapper {
             position: absolute;
             right: 20px;
@@ -176,6 +190,7 @@
             visibility: hidden;
           }
           .pro-inner-item {
+            border-radius: 4px;
             .pro-arrow-wrapper {
               display: none;
             }
@@ -230,6 +245,7 @@
       > ul {
         > .pro-menu-item {
           > .pro-inner-item {
+            border-radius: 4px;
             > .suffix-wrapper,
             > .prefix-wrapper {
               opacity: 0;
@@ -254,8 +270,6 @@
             position: relative;
 
             > .pro-inner-item {
-              pointer-events: none;
-
               > .pro-arrow-wrapper {
                 display: none;
               }
