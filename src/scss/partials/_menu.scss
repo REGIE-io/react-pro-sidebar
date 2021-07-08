@@ -1,6 +1,6 @@
 %pro-item-prefix {
   &:before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 4px;
     min-width: 4px;
@@ -9,13 +9,20 @@
     border-radius: 50%;
     margin-right: 15px;
     position: relative;
-    box-shadow: 1px 0px 0px $sidebar-color, 0px -1px 0px $sidebar-color, 0px 1px 0px $sidebar-color,
-      -1px 0px 0px $sidebar-color;
+    box-shadow: 1px 0px 0px $sidebar-color, 0px -1px 0px $sidebar-color,
+      0px 1px 0px $sidebar-color, -1px 0px 0px $sidebar-color;
   }
 }
 
 %item-hover {
   background: $greyNew6 !important;
+  border-radius: 4px;
+}
+
+%item-active {
+  background-color: $active-item-bg-color;
+  padding-right: 0px !important;
+  color: $active-text-color;
   border-radius: 4px;
 }
 
@@ -26,7 +33,7 @@
 }
 
 .pro-sidebar {
-  color : $default-text-color;
+  color: $default-text-color;
   box-shadow: 0px 0px 8px rgba(136, 136, 136, 0.25);
   .pro-menu {
     padding-top: 10px;
@@ -47,7 +54,7 @@
     a {
       text-decoration: none;
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
@@ -62,7 +69,7 @@
       padding: 0px;
       border-radius: 4px;
       &.active {
-        >.pro-inner-item{
+        > .pro-inner-item {
           background-color: $active-item-bg-color;
           padding-right: 0px !important;
           color: $active-text-color;
@@ -85,7 +92,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        padding-left : 6px;
+        padding-left: 6px;
         cursor: pointer;
         height: 48px;
 
@@ -93,7 +100,7 @@
           outline: none;
         }
         &:hover {
-          @extend %item-hover
+          @extend %item-hover;
         }
         > .pro-icon-wrapper {
           margin-right: 10px;
@@ -131,15 +138,15 @@
 
       &.pro-sub-menu {
         &.active {
-          >.pro-inner-item{
-          background-color: $submenu-bg-color;
-          padding-right: 0px !important;
-          color: $active-text-color;
-          border-radius: 4px;
-          &:hover {
-            @extend %item-hover
+          > .pro-inner-item {
+            background-color: $submenu-bg-color;
+            padding-right: 0px !important;
+            color: $active-text-color;
+            border-radius: 4px;
+            &:hover {
+              @extend %item-hover;
+            }
           }
-        }
         }
         ul {
           padding: 0px 0px !important;
@@ -153,7 +160,7 @@
           &:before {
             background: $sidebar-color;
           }
-          
+
           > .pro-arrow-wrapper {
             position: absolute;
             right: 20px;
@@ -258,7 +265,7 @@
           }
           position: relative;
           &::before {
-            content: '';
+            content: "";
             display: inline-block;
             position: absolute;
             top: 0;
@@ -268,8 +275,13 @@
             cursor: pointer;
           }
           &.pro-sub-menu {
+            
             position: relative;
-
+            &.active {
+              >.pro-inner-item{
+                @extend %item-active
+              }
+            }
             > .pro-inner-item {
               > .pro-arrow-wrapper {
                 display: none;
@@ -356,7 +368,7 @@
 
           .pro-inner-list-item {
             padding-left: 0;
-            
+
             .pro-inner-item {
               padding: 8px 15px 8px 30px;
               &:before {
